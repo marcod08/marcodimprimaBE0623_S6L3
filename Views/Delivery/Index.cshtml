@@ -1,0 +1,48 @@
+﻿@model List<S6L1.Models.Expedition>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@if (Model.Count == 0)
+{
+    <h3>Non ci sono spedizioni al momento</h3>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Venditore</th>
+                <th scope="col">Spedito il</th>
+                <th scope="col">Consegnato il</th>
+                <th scope="col">Peso</th>
+                <th scope="col">Città</th>
+                <th scope="col">Indirizzo</th>
+                <th scope="col">Nome Cliente</th>
+                <th scope="col">Spese di spedizione</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var exped in Model)
+            {
+                <tr>
+                    <th scope="row">@exped.Id</th>
+                    <td>@exped.SellerName</td>
+                    <td>@exped.ExpeditionStartDate</td>
+                    <td>@exped.ExpeditionEndDate</td>
+                    <td>@exped.Weight</td>
+                    <td>@exped.City</td>
+                    <td>@exped.Address</td>
+                    <td>@exped.ClientName</td>
+                    <td>@exped.ExpeditionPrice</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+}

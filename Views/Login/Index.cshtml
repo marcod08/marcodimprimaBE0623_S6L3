@@ -1,0 +1,26 @@
+﻿@model S6L1.Models.Admin
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm())
+{
+    <div class="mt-2">
+        @Html.LabelFor(model => model.Username)
+    </div>
+
+    <div>
+        @Html.EditorFor(model => model.Username)
+    </div>
+
+    <div class="mt-1">
+        @Html.LabelFor(model => model.Password)
+    </div>
+
+    <div>
+        @Html.PasswordFor(model => model.Password)
+    </div>
+
+    <button class="btn btn-primary mt-3">Login</button>
+}
